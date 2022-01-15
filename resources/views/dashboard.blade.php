@@ -29,7 +29,7 @@
                             <div class="flex-auto text-2xl mb-4">Tasks List</div>
                             
                             <div class="flex-auto text-right mt-2">
-                                <a href="/task" ><i class="fa fa-edit" style="font-size:36px"></i> </a>
+                                <a href="/task" ><i class="fa fa-plus" style="font-size:36px"></i> </a>
                             </div>
                         </div>
                         <table class="w-full text-md rounded mb-4">
