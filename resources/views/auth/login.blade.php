@@ -73,6 +73,26 @@
                 transition-delay: 0.1s;
             }
 
+            .forgot,.remember{
+                color:rgb(255,255,255);
+                font-size:15px;
+            }
+
+            .remember{
+
+                margin-left:5px;
+            }
+
+            .forgot:hover{
+
+                color: rgb(255,255,255);
+                background: rgb(251,99,252);
+                border-radius:25px;
+                
+                box-shadow: 0 0 20px rgb(251,99,252), 0 0 40px rgb(251,99,252), 0 0 60px rgb(251,99,252);
+                transition-delay: 0.1s;
+            }
+
         </style>
     </head>
 
@@ -100,12 +120,12 @@
                 <div class="block mt-4">
                 <label class="flex items-center">
                     <input type="checkbox" class="form-checkbox" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                    <span class="remember text-sm text-gray-600">{{ __('Remember me') }}</span>
                 </label>
                 </div>
                 <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                    <a class="forgot text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif
