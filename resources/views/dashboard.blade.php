@@ -26,7 +26,8 @@
             }
 
             .action-label{
-                margin-left:600px;
+                color: white;
+                margin-left:500px;
             }
 
             .editdeletebut{
@@ -44,32 +45,32 @@
                 {{ __('Dashboard') }}
             </h2>
         </x-slot>
-            <div class="py-10">
+            <div class="py-10" style="color:white;">
                 <div class="tasklist" style="white-space: nowrap; display: table;">
                     <div class="task-detail overflow-hidden shadow-xl sm:rounded-lg p-5">
                         <div class="flex">
                             <div class="flex-auto text-2xl mb-4">Tasks List</div>
                             
                             <div class="flex-auto text-right mt-2">
-                                <a href="/task" ><i class="fa fa-plus" style="font-size:36px"></i> </a>
+                                <a href="/task" ><i class="fa fa-plus" style="font-size:36px;color:white;"></i> </a>
                             </div>
                         </div>
                         <table style="display: block; height: 50vh; overflow-y: scroll;">
                             <thead>
                             <tr class="border-b">
-                                <a class="text-left p-3 px-5">Task</a>
-                                <a class="action-label">Actions</a>
+                                <a class="text-left p-3 px-5" style="font-size:36px">Task</a>
+                                <a class="action-label" style="font-size:36px">Actions</a>
                                 <th></th>
                             </tr>
                             </thead>
                             <tbody >
                             @foreach(auth()->user()->tasks as $task)
-                                <tr class="border-b hover:bg-orange-100">
+                                <tr class="border-b hover:bg-orange-100 ">
                                     <td class="p-3 px-5">
                                         {{$task->description}}
                                     </td>
                                     <td class="editdeletebut">
-                                        <a href="/task/{{$task->id}}" name="edit" ><i class="fa fa-edit" style="font-size:24px; margin-right:10px; margin-top:2px;"></i>  </a>
+                                        <a href="/task/{{$task->id}}" name="edit" ><i class="fa fa-edit" style="font-size:24px; margin-right:10px; margin-top:2px; color:white;"></i>  </a>
                                         <form action="/task/{{$task->id}}" class="inline-block">
                                             <button type="submit" name="delete" formmethod="POST" ><i class="fa fa-trash" style="font-size:24px;color:red"></i></button>
                                             {{ csrf_field() }}
