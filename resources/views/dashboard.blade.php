@@ -15,8 +15,12 @@
                 background-size: 100%;
             }
 
+            .task-detail{
+                background-color:rgb(15,32,37);
+            }
+
             .tasklist{
-                margin-left:20%;
+                margin-left:25%;
                 width:50%;
                 height: 800px;
             }
@@ -42,7 +46,7 @@
         </x-slot>
             <div class="py-10">
                 <div class="tasklist" style="white-space: nowrap; display: table;">
-                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-5">
+                    <div class="task-detail overflow-hidden shadow-xl sm:rounded-lg p-5">
                         <div class="flex">
                             <div class="flex-auto text-2xl mb-4">Tasks List</div>
                             
