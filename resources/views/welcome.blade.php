@@ -7,7 +7,9 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Fruktur&family=Griffy&family=Indie+Flower&family=Lobster&family=Permanent+Marker&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <!-- Styles -->
         <style>
@@ -15,6 +17,11 @@
         </style>
 
         <style>
+
+            * {
+                font-family: 'Permanent Marker', cursive;
+            }
+
             body {
                 font-family: 'Nunito';
             }
@@ -24,27 +31,59 @@
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
-                height: 100%;
+                height: 1080;
+            }
+
+            .login,.register{
+                margin-top:50px;
+                font-size:35px;
+            }
+
+            .login{
+
+                margin-left:50px;
+                width:170px
+            }
+
+            .register{
+
+                margin-left:50px;
+                width:170px
+            }
+
+            .button{
+                width:500px;
+                height:1080px;
+                background: rgb(15,32,37)
+            }
+
+            .vdo{
+                display:
             }
         </style>
     </head>
-    <body class="welcome">
+    <body class="welcome-body">
         <div class="welcome">
             @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                <div class="button">
                     @auth
                         <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
+
+
                     @else
-                        <a href="{{ route('login') }}" class="btn btn-outline-warning">Login</a>
+                        <video autoplay muted loop id="myVideo" class='vdo'>
+                            <source src="/images/Tasklist.mp4" type="video/mp4">
+                        </video>
+                        <a href="{{ route('login') }}" class="login btn btn-outline-warning">Login</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="btn btn-outline-warning">Register</a>
+                            <a href="{{ route('register') }}" class="register btn btn-outline-warning">Register</a>
                         @endif
                     @endif
                 </div>
             @endif
 
-            
         </div>
+    
     </body>
 </html>
