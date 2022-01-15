@@ -6,24 +6,27 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
 
+
+
             .body-css{
                 background: url('{{url("/images/bg.jpg")}}') no-repeat;
+                
+                background-repeat: no-repeat;
                 background-size: 100%;
-                height: 580px;
             }
         </style>
     </head>
 
     
     <x-app-layout>
-        <div class="body-css">
+        <div >
         <x-slot name="header">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ __('Dashboard') }}
             </h2>
         </x-slot>
             <div class="py-10">
-                <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto sm:px-6 lg:px-8" style="white-space: nowrap; display: table;">
                     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-5">
                         <div class="flex">
                             <div class="flex-auto text-2xl mb-4">Tasks List</div>
@@ -32,7 +35,7 @@
                                 <a href="/task" ><i class="fa fa-plus" style="font-size:36px"></i> </a>
                             </div>
                         </div>
-                        <table class="w-full text-md rounded mb-4">
+                        <table style="display: block; height: 50vh; overflow-y: scroll;">
                             <thead>
                             <tr class="border-b">
                                 <th class="text-left p-3 px-5">Task</th>
@@ -40,7 +43,7 @@
                                 <th></th>
                             </tr>
                             </thead>
-                            <tbody>
+                            <tbody >
                             @foreach(auth()->user()->tasks as $task)
                                 <tr class="border-b hover:bg-orange-100">
                                     <td class="p-3 px-5">
@@ -60,7 +63,7 @@
                     </div>
                 </div>
             </div>
-        <div/>
+        </div>
     </x-app-layout>
     </body>
 </html>
