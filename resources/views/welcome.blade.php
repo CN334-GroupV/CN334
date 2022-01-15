@@ -31,11 +31,11 @@
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
-                height: 1080;
+                height: auto;
             }
 
             .login,.register{
-                margin-top:50px;
+                margin-top:75px;
                 font-size:35px;
             }
 
@@ -57,6 +57,20 @@
                 background: rgb(15,32,37)
             }
 
+            .register:hover{
+                color: rgb(255,255,255);
+                background: rgb(255,193,7);
+                box-shadow: 0 0 20px rgb(255,193,7), 0 0 40px rgb(255,193,7), 0 0 60px rgb(255,193,7);
+                transition-delay: 0.1s;
+            }
+
+            .login:hover{
+                color: rgb(255,255,255);
+                background: rgb(220,53,69);
+                box-shadow: 0 0 40px rgb(220,53,69), 0 0 40px rgb(220,53,69), 0 0 80px rgb(220,53,69);
+                transition-delay: 0.1s;
+            }
+
             .vdo{
                 display:
             }
@@ -74,7 +88,7 @@
                         <video autoplay muted loop id="myVideo" class='vdo'>
                             <source src="/images/Tasklist.mp4" type="video/mp4">
                         </video>
-                        <a href="{{ route('login') }}" class="login btn btn-outline-warning">Login</a>
+                        <a href="{{ route('login') }}" class="login btn btn-outline-danger">Login</a>
 
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}" class="register btn btn-outline-warning">Register</a>
