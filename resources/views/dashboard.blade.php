@@ -14,6 +14,21 @@
                 background-repeat: no-repeat;
                 background-size: 100%;
             }
+
+            .tasklist{
+                margin-left:20%;
+                width:50%;
+                height: 800px;
+            }
+
+            .action-label{
+                margin-left:600px;
+            }
+
+            .editdeletebut{
+                display:flex;
+                margin-left: 580px;
+            }
         </style>
     </head>
 
@@ -26,7 +41,7 @@
             </h2>
         </x-slot>
             <div class="py-10">
-                <div class="max-w-4xl mx-auto sm:px-6 lg:px-8" style="white-space: nowrap; display: table;">
+                <div class="tasklist" style="white-space: nowrap; display: table;">
                     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-5">
                         <div class="flex">
                             <div class="flex-auto text-2xl mb-4">Tasks List</div>
@@ -38,8 +53,8 @@
                         <table style="display: block; height: 50vh; overflow-y: scroll;">
                             <thead>
                             <tr class="border-b">
-                                <th class="text-left p-3 px-5">Task</th>
-                                <th class="text-right p-3 px-5">Actions</th>
+                                <a class="text-left p-3 px-5">Task</a>
+                                <a class="action-label">Actions</a>
                                 <th></th>
                             </tr>
                             </thead>
@@ -49,8 +64,8 @@
                                     <td class="p-3 px-5">
                                         {{$task->description}}
                                     </td>
-                                    <td class="flex-auto text-right p-3 px-5">
-                                        <a href="/task/{{$task->id}}" name="edit" ><i class="fa fa-edit" style="font-size:24px"></i>  </a>
+                                    <td class="editdeletebut">
+                                        <a href="/task/{{$task->id}}" name="edit" ><i class="fa fa-edit" style="font-size:24px; margin-right:10px; margin-top:2px;"></i>  </a>
                                         <form action="/task/{{$task->id}}" class="inline-block">
                                             <button type="submit" name="delete" formmethod="POST" ><i class="fa fa-trash" style="font-size:24px;color:red"></i></button>
                                             {{ csrf_field() }}
