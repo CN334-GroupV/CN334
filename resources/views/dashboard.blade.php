@@ -3,6 +3,7 @@
     <head>
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
 
             .body-css{
@@ -28,7 +29,7 @@
                             <div class="flex-auto text-2xl mb-4">Tasks List</div>
                             
                             <div class="flex-auto text-right mt-2">
-                                <a href="/task" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add new Task</a>
+                                <a href="/task" ><i class="fa fa-edit" style="font-size:36px"></i> </a>
                             </div>
                         </div>
                         <table class="w-full text-md rounded mb-4">
@@ -46,10 +47,9 @@
                                         {{$task->description}}
                                     </td>
                                     <td class="flex-auto text-right p-3 px-5">
-                                        
-                                        <a href="/task/{{$task->id}}" name="edit" class="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Edit</a>
+                                        <a href="/task/{{$task->id}}" name="edit" ><i class="fa fa-edit" style="font-size:24px"></i>  </a>
                                         <form action="/task/{{$task->id}}" class="inline-block">
-                                            <button type="submit" name="delete" formmethod="POST" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button>
+                                            <button type="submit" name="delete" formmethod="POST" ><i class="fa fa-trash" style="font-size:24px;color:red"></i></button>
                                             {{ csrf_field() }}
                                         </form>
                                     </td>
