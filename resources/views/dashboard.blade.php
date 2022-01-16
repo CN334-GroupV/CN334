@@ -8,11 +8,21 @@
 
 
 
-            .body-css{
-                background: url('{{url("/images/bg.jpg")}}') no-repeat;
+            .dashpage{
+                position: fixed;
+                bottom: 0;
+                color: #f1f1f1;
+                width: 100%;
+                padding: 20px;
                 
-                background-repeat: no-repeat;
-                background-size: 100%;
+            }
+
+            .bgvdo{
+
+                right: 0;
+                bottom: 0;
+                min-width: 100%;
+                min-height: 100%;
             }
 
             .task-detail{
@@ -24,7 +34,16 @@
                 margin-left:26%;
 
                 width:48%;
+                color:rgb(220,53,69);
+                border: 2px solid rgb(220,53,69);
+                box-shadow: 0 0 60px rgb(220,53,69), 0 0 80px rgb(220,53,69), 0 0 100px rgb(220,53,69);
                 
+            }
+
+            .list:hover{
+                color:rgb(220,53,69);
+                background-color:rgb(220,53,69);
+                box-shadow: 0 0 60px rgb(220,53,69), 0 0 80px rgb(220,53,69), 0 0 100px rgb(220,53,69);
             }
 
             .tabletask{
@@ -36,7 +55,7 @@
                 margin-left:500px;
             }
 
-            .task-label:hover{
+            .task-label{
                 color:white;
             }
 
@@ -92,7 +111,11 @@
                 {{ __('Dashboard') }}
             </h2>
         </x-slot>
-            <div class="py-10" style="color:white;">
+            <video autoplay muted loop id="myVideo" class='bgvdo'>
+                <source src="/images/bdvdo.mp4" type="video/mp4">
+            </video>
+            <div class="dashpage" style="color:white;">
+            
                 <div class="tasklist" style="white-space: nowrap; display: table;">
                     <div class="task-detail overflow-hidden shadow-xl sm:rounded-lg p-5">
                         <div class="flex">
@@ -112,7 +135,7 @@
                             </thead>
                             <body class='taskbody'>
                             @foreach(auth()->user()->tasks as $task)
-                                <tr class="border-b hover:bg-orange-100 ">
+                                <tr class="list border-b hover:bg-orange-100 ">
                                     <td class="p-3 px-5" style="font-size:30px; color:white;">
                                         {{$task->description}}
                                     </td>

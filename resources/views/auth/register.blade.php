@@ -22,24 +22,30 @@
                 font-family: 'Permanent Marker', cursive;
             }
 
-            body {
-                font-family: 'Nunito';
-            }
-
-            .login-body{
-                background: url('{{url("/images/bg.jpg")}}') no-repeat;
+            body{
+                background: rgb(15,32,37);;
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
                 height: auto;
             }
-
-            .login-form{
+            
+            .register{
+                position: fixed;
                 width:500px;
                 height:1080px;
-                background: rgb(15,32,37)
+                background: rgb(15,32,37);
             }
-            
+
+            .bgvdo{
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                min-width: 100%;
+                min-height: 100%;
+
+            }
+
             .name-label,.email-label,.password-label{
                 font-size:25px;
                 margin-left:17.5%;
@@ -64,7 +70,6 @@
 
             .registerbutton{
                 margin-left: 50px;
-                
                 width:125px;
             }
 
@@ -87,11 +92,9 @@
             }
 
             .already:hover{
-
                 color: rgb(255,255,255);
                 background: rgb(251,99,252);
                 border-radius:25px;
-
                 box-shadow: 0 0 20px rgb(251,99,252), 0 0 40px rgb(251,99,252), 0 0 60px rgb(251,99,252);
                 transition-delay: 0.1s;
             }
@@ -124,8 +127,11 @@
 
         </style>
 </head>
-<body class='login-body'>
-    <div class='login-form'>
+<body class='register-body'>
+        <video autoplay muted loop id="myVideo" class='bgvdo'>
+            <source src="/images/bdvdo.mp4" type="video/mp4">
+        </video>
+    <div class='register'>
         <video autoplay muted loop id="myVideo" class='vdo'>
             <source src="/images/Tasklist.mp4" type="video/mp4">
         </video>

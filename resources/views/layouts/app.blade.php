@@ -9,14 +9,18 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
+        
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <style>
             .body-css{
-                background: url('{{url("/images/bg.jpg")}}') no-repeat;
+                background: rgb(15,32,37);
                 background-repeat: no-repeat;
                 background-size: 100% 100%;
+            }
+
+            .nav{
+
             }
         </style>
         @livewireStyles
@@ -26,14 +30,11 @@
     </head>
     <body class="font-sans antialiased">
         <div class="body-css min-h-screen bg-gray-100 ">
-            @livewire('navigation-dropdown')
-
+            <div class='nav'>
+                @livewire('navigation-dropdown')
+            </div>
             <!-- Page Heading -->
-            <header class="text-white">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8"'>
-                    {{ $header }}
-                </div>
-            </header>
+            
 
             <!-- Page Content -->
             <main>

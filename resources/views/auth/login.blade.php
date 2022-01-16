@@ -27,7 +27,7 @@
             }
 
             .login-body{
-                background: url('{{url("/images/bg.jpg")}}') no-repeat;
+                background: rgb(15,32,37);
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
@@ -37,7 +37,18 @@
             .login-form{
                 width:500px;
                 height:1080px;
-                background: rgb(15,32,37)
+                background: rgb(15,32,37);
+                position: fixed;
+
+            }
+
+            .bgvdo{
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                min-width: 100%;
+                min-height: 100%;
+
             }
             
             .email-label,.password-label{
@@ -123,6 +134,9 @@
     </head>
 
 <body class='login-body'>
+    <video autoplay muted loop id="myVideo" class='bgvdo'>
+        <source src="/images/bdvdo.mp4" type="video/mp4">
+    </video>
     <div class='login-form'>
         <video autoplay muted loop id="myVideo" class='vdo'>
             <source src="/images/Tasklist.mp4" type="video/mp4">

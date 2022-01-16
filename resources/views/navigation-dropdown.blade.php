@@ -11,12 +11,18 @@
             }
 
             .navbar{
-                background: rgb(15,32,37)
+                background: rgb(15,32,37) ;
+
             }
 
+
             .logonav{
-                width:80px;
-                height:48px;
+                width:75px;
+                height:75px;
+                border-radius:50px;
+            }
+            .vdo{
+                border-radius:20px;
             }
 
             .dashboardbut{
@@ -49,6 +55,7 @@
 
             }
             
+
 
         </style>
 
@@ -248,4 +255,5 @@
         </div>
     </div>
 </nav>
+
 </html>
