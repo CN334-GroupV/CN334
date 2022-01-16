@@ -1,18 +1,76 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Fruktur&family=Griffy&family=Indie+Flower&family=Lobster&family=Permanent+Marker&display=swap" rel="stylesheet">
+        
+        <style>
+            * {
+                font-family: 'Permanent Marker', cursive;
+            }
+
+            .navbar{
+                background: rgb(15,32,37)
+            }
+
+            .logonav{
+                width:80px;
+                height:48px;
+            }
+
+            .dashboardbut{
+                color:rgb(255,255,255);
+            }
+
+            ::-webkit-scrollbar {
+                width: 10px;
+ 
+            }
+
+            /* Track */
+            ::-webkit-scrollbar-track {
+                background: #f1f1f1; 
+                border-radius:10px;
+            }
+            
+                
+                /* Handle */
+            ::-webkit-scrollbar-thumb {
+                background: #888; 
+                border-radius:10px;
+
+            }
+            
+
+                /* Handle on hover */
+            ::-webkit-scrollbar-thumb:hover {
+                background: #555; 
+
+            }
+            
+
+        </style>
+
+    </head>
+
+<nav x-data="{ open: false }" class="navbar border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
+                <div class="logonav flex-shrink-0 flex items-center" style=''>
                     <a href="{{ route('dashboard') }}">
-                        <x-jet-application-mark class="block h-9 w-auto" />
+                        <video autoplay muted loop id="myVideo" class='vdo'>
+                            <source src="/images/Tasklist.mp4" type="video/mp4">
+                        </video>
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                    <x-jet-nav-link class='dashboardbut' href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
                 </div>
@@ -190,3 +248,4 @@
         </div>
     </div>
 </nav>
+</html>

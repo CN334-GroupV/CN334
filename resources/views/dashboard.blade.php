@@ -2,7 +2,7 @@
 <html>
     <head>
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
 
@@ -17,17 +17,31 @@
 
             .task-detail{
                 background-color:rgb(15,32,37);
+                width:100%;
             }
 
             .tasklist{
-                margin-left:25%;
-                width:50%;
-                height: 800px;
+                margin-left:26%;
+
+                width:48%;
+                
+            }
+
+            .tabletask{
+                width:100%;
             }
 
             .action-label{
                 color: white;
                 margin-left:500px;
+            }
+
+            .task-label:hover{
+                color:white;
+            }
+
+            .action-label{
+                color: white;
             }
 
             .editdeletebut{
@@ -60,6 +74,10 @@
                 background: #555; 
 
             }
+
+            .dashbar{
+                background: rgb(15,32,37);
+            }
             
 
         </style>
@@ -68,7 +86,7 @@
 
     
     <x-app-layout>
-        <div >
+
         <x-slot name="header">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ __('Dashboard') }}
@@ -84,30 +102,30 @@
                                 <a href="/task" ><i class="fa fa-plus" style="font-size:36px;color:white;"></i> </a>
                             </div>
                         </div>
-                        <table style="display: block; height: 50vh; overflow-y: scroll;">
+                        <table class='tabletask' style="display: block; width:90vh; height: 62vh; overflow-y: scroll;">
                             <thead>
                             <tr class="border-b">
-                                <a class="text-left p-3 px-5" style="font-size:36px">Task</a>
-                                <a class="action-label" style="font-size:36px">Actions</a>
+                                <a class="task-label text-left p-3 px-5" style="font-size:38px">Task</a>
+                                <a class="action-label" style="font-size:38px; margin-left:62%;">Actions</a>
                                 <th></th>
                             </tr>
                             </thead>
-                            <tbody >
+                            <body class='taskbody'>
                             @foreach(auth()->user()->tasks as $task)
                                 <tr class="border-b hover:bg-orange-100 ">
-                                    <td class="p-3 px-5">
+                                    <td class="p-3 px-5" style="font-size:30px; color:white;">
                                         {{$task->description}}
                                     </td>
                                     <td class="editdeletebut">
-                                        <a href="/task/{{$task->id}}" name="edit" ><i class="fa fa-edit" style="font-size:24px; margin-right:10px; margin-top:2px; color:white;"></i>  </a>
+                                        <a href="/task/{{$task->id}}" name="edit" ><i class="fa fa-edit" style="font-size:30px; margin-right:10px; margin-top:20px; color:white;"></i>  </a>
                                         <form action="/task/{{$task->id}}" class="inline-block">
-                                            <button type="submit" name="delete" formmethod="POST" ><i class="fa fa-trash" style="font-size:24px;color:red"></i></button>
+                                            <button type="submit" name="delete" formmethod="POST" ><i class="fa fa-trash" style="font-size:30px; margin-top:17px; color:red"></i></button>
                                             {{ csrf_field() }}
                                         </form>
                                     </td>
                                 </tr>
                             @endforeach
-                            </tbody>
+                            </body>
                         </table>     
                     </div>
                 </div>
