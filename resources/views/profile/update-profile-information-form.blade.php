@@ -1,10 +1,14 @@
 <x-jet-form-section submit="updateProfileInformation">
     <x-slot name="title">
+    <p style="color:white;">
         {{ __('Profile Information') }}
+    <p/>
     </x-slot>
 
     <x-slot name="description">
+    <p style="color: rgb(156 163 175);">
         {{ __('Update your account\'s profile information and email address.') }}
+    <p/>
     </x-slot>
 
     <x-slot name="form">
@@ -24,7 +28,7 @@
                                     reader.readAsDataURL($refs.photo.files[0]);
                             " />
 
-                <x-jet-label for="photo" value="{{ __('Photo') }}" />
+                <x-jet-label  for="photo" value="{{ __('Photo') }}" />
 
                 <!-- Current Profile Photo -->
                 <div class="mt-2" x-show="! photoPreview">
