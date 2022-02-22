@@ -7,7 +7,6 @@
         <style>
 
 
-
             .dashpage{
                 position: fixed;
                 bottom: 0;
@@ -140,7 +139,9 @@
                                         {{$task->description}}
                                     </td>
                                     <td class="editdeletebut">
-                                        <a href="/task/{{$task->id}}" name="edit" ><i class="fa fa-edit" style="font-size:30px; margin-right:10px; margin-top:20px; color:white;"></i>  </a>
+                                        <a href="/task/{{$task->id}}" name="edit" ><i class="fa fa-edit" style="font-size:30px; margin-right:3px; margin-top:20px; color:white;"></i>  </a>
+                                        <a href="https://twitter.com/share?url={{$task->description}}" onclick="window.open(this.href);return false;" class="twitter"><i style='font-size:29px; margin-right:5px; margin-top:20px; color:white;' class="fa fa-twitter"></i></a>
+                                        <a href="https://www.facebook.com/sharer/sharer.php?u=127.0.0.1:8000" class="facebook"><i style='margin-top:20px; margin-right:5px; font-size:28px; color:white;' class="fa fa-facebook-square"></i></a>
                                         <form action="/task/{{$task->id}}" class="inline-block">
                                             <button type="submit" name="delete" formmethod="POST" ><i class="fa fa-trash" style="font-size:30px; margin-top:17px; color:red"></i></button>
                                             {{ csrf_field() }}
