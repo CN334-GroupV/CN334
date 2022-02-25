@@ -135,7 +135,7 @@
                             <body class='taskbody'>
                             @foreach(auth()->user()->tasks as $task)
                                 <tr class="list border-b hover:bg-orange-100 ">
-                                    <td class="p-3 px-5" style="font-size:30px; color:white;">
+                                    <td class="p-3 px-5" style="font-size:35px; color:white;">
                                         {{$task->description}}
                                     </td>
                                     <td class="editdeletebut">
