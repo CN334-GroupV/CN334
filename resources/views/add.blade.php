@@ -59,10 +59,7 @@
             .addtask{
                 width:100%;
             }
-            .form-group{
-                justify-content:center;
-                align-items: center;
-            }
+
             .addbutton{
                 margin-left:150px;
                 margin-top:20px;
@@ -89,8 +86,6 @@
             }
 
             .addinput{
-                justify-content:center;
-                align-items: center;
                 width:80%;
                 margin-left:10%;
                 padding-top:50px;
